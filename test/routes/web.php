@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Notifications\TestNotification;
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +15,19 @@
 */
 
 Route::get('/', function () {
+
+
+
+
+
+
+
     return view('welcome');
 });
 
 //Route::resource('photos', 'PhotoController');
-Route::resource('books','BookController');
+Route::resource('/books','BookController');
 ////Route::get('user/profile', 'UserProfileController@show')->name('profile');
-//Route::post('/bookstore','BookController@store');
-//Route::get('/list','BookController@index');
+Route::get('/create','UserController@create');
+Route::post('/store','UserController@store');
+Route::get('/index','UserController@index');
